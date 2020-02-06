@@ -21,7 +21,6 @@ def reduce(array, sp = nil)
   while i < array.length do
     sum = yield(sum,array[i])
     i += 1
-    binding.pry
   end
   sum
   end
