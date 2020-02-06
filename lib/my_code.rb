@@ -1,1 +1,27 @@
-# Your Code Here
+require 'pry'
+
+def map(array)
+  new = []
+  i=0
+  while i < array.length do
+    new.push(yield(array[i]))
+    i += 1
+  end
+  new
+end
+
+def reduce(array, sp = nil)
+  if sp
+    sum = sp
+    i = 0
+  else
+    sum = array[0]
+    i=1
+  end
+  while i < array.length do
+    sum = yield(sum,array[i])
+    i += 1
+    binding.pry
+  end
+  sum
+  end
